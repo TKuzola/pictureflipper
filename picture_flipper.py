@@ -13,7 +13,6 @@ import json
 from PIL import ImageTk, Image, ExifTags
 
 
-
 class RightClickMenu(tk.Frame):  # pylint: disable=too-many-ancestors
     """Class defining popup menu
 
@@ -112,13 +111,13 @@ def size_image_to_window(image_path, window_width, window_height):
         exif = dict(img._getexif().items())   # pylint: disable=W0212
 
         if exif[orientation] == 3:
-            print("rotate 180")
+            #print("rotate 180")
             img = img.rotate(180, expand=True)
         elif exif[orientation] == 6:
-            print("rotate 270")
+            #print("rotate 270")
             img = img.rotate(270, expand=True)
         elif exif[orientation] == 8:
-            print("rotate 90")
+            #print("rotate 90")
             img = img.rotate(90, expand=True)
 
     except (AttributeError, KeyError, IndexError):
@@ -205,7 +204,12 @@ class PictureFlipperGUI:
         for directory in self.directory_list:
             for extension in self.extension_list:
                 print(directory, extension)
-                self.display_list = self.display_list + get_file_list(directory, extension)
+                if os.path.isdir(directory):
+                    self.display_list = self.display_list + get_file_list(directory, extension)
+                else:
+                    sys.exit(directory + " is not a directory.")
+        if len(self.display_list) == 0:
+            sys.exit(directory + " contains no files with specified extensions.")
         self.update_pic()
 
     def update_pic(self):

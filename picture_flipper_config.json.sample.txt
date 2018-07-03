@@ -1,0 +1,9 @@
+{
+  "PICTURES": {
+    "DIRECTORIES": "C:/Users/kilroy/Pictures",
+    "EXTENSIONS": ".jpg,.png",
+    "DELAY": 6000,
+    "TITLE": "Hey There!",
+    "BOSS_FILE": "C:/Users/kilroy/Pictures/boss/favor.jpg"
+  }
+}
