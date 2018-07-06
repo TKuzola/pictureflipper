@@ -1,6 +1,6 @@
 Usage
 
-Rename the file picture_fliper_config.json.sample.txt to picture_fliper_config.json 
+Rename the file picture_fliper_config_sample.json to picture_fliper_config.json 
 
 Edit this file as folllows:
 
