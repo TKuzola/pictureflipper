@@ -46,13 +46,13 @@ class RightClickMenu(tk.Frame):  # pylint: disable=too-many-ancestors
     def popup_text(self, event):
         """Handler for right click action
         """
-        #print("right click")
+        # print("right click")
         self.right_click_menu.post(event.x_root, event.y_root)
 
     def pause(self):
         """Keeps the file name of image being displayed from changing
         """
-        #print("Pause")
+        # print("Pause")
         self.right_click_menu.entryconfigure(0, state=tk.DISABLED)
         self.right_click_menu.entryconfigure(1, state=tk.ACTIVE)
         self.gui_instance.pause()
@@ -60,7 +60,7 @@ class RightClickMenu(tk.Frame):  # pylint: disable=too-many-ancestors
     def resume(self):
         """Allows file name of image being displayed to change
         """
-        #print("resume")
+        # print("resume")
         self.right_click_menu.entryconfigure(1, state=tk.DISABLED)
         self.right_click_menu.entryconfigure(0, state=tk.ACTIVE)
         self.gui_instance.resume()
@@ -68,14 +68,14 @@ class RightClickMenu(tk.Frame):  # pylint: disable=too-many-ancestors
     def boss(self):
         """Changes file to be displayed to boss image and pauses
         """
-        #print("Boss")
+        # print("Boss")
         self.pause()
         self.gui_instance.boss()
 
     def file_name(self):
         """Displays current file name and path
         """
-        #print(self.gui_instance.get_cur_filename())
+        # print(self.gui_instance.get_cur_filename())
         messagebox.showinfo("Filename", self.gui_instance.get_cur_filename())
 
 
@@ -111,13 +111,13 @@ def size_image_to_window(image_path, window_width, window_height):
         exif = dict(img._getexif().items())   # pylint: disable=W0212
 
         if exif[orientation] == 3:
-            #print("rotate 180")
+            # print("rotate 180")
             img = img.rotate(180, expand=True)
         elif exif[orientation] == 6:
-            #print("rotate 270")
+            # print("rotate 270")
             img = img.rotate(270, expand=True)
         elif exif[orientation] == 8:
-            #print("rotate 90")
+            # print("rotate 90")
             img = img.rotate(90, expand=True)
 
     except (AttributeError, KeyError, IndexError):
