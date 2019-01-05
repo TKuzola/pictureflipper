@@ -157,8 +157,8 @@ class PictureFlipperGUI:
     display_list = []
     directory_list = []
     extension_list = []
-    current_window_width = 400
-    current_window_height = 300
+    current_window_width = 450
+    current_window_height = 350
     current_picture = None
     main_panel = None
     init = True
