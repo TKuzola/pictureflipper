@@ -66,7 +66,7 @@ class RightClickMenu(tk.Frame):  # pylint: disable=too-many-ancestors
         self.gui_instance.resume()
 
     def boss(self):
-        """Changes file to be displayed to boss image and pauses
+        """Changes file to be displayed to boss image and calls pause
         """
         # print("Boss")
         self.pause()
